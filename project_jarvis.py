@@ -11,7 +11,7 @@ import speech_recognition as sr
 import wikipedia
 import webbrowser
 import os
-import smtplib
+# import smtplib
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
 
@@ -53,13 +53,13 @@ def takeCommand():
         return "None"
     return query
 
-def sendEmail(to, content):
-    server= smtplib.SMTP('smtp.gmail.com',587)
-    server.ehlo()
-    server.starttls()
-    server.login('ayushnagpure62@gmail.com','xxxxxxxxxxx')
-    server.sendmail('ayushnagpure27@gmail.com',to,content)
-    server.close()
+# def sendEmail(to, content):
+#     server= smtplib.SMTP('smtp.gmail.com',587)
+#     server.ehlo()
+#     server.starttls()
+#     server.login('ayushnagpure62@gmail.com','xxxxxxxxxxx')
+#     server.sendmail('ayushnagpure27@gmail.com',to,content)
+#     server.close()
 if __name__== "__main__":
     WishMe()
     while True:
@@ -92,18 +92,17 @@ if __name__== "__main__":
             speak(f"the time is {strTime}")
             
       
-            
-        elif 'email to ayush' in query:
-            try:
-                speak("What should I say?")
-                content = takeCommand()
-                to = "ayushnagpure27@gmail.com"
-                sendEmail(to, content)
-            except Exception as e:
-                print(e)
-                speak("sorry bro I am not able to send the email")
                 
         elif 'quit' in query:
             speak("Thank YOU. I am always there for you")
             break
-            
+           
+#         elif 'email to ayush' in query:
+#             try:
+#                 speak("What should I say?")
+#                 content = takeCommand()
+#                 to = "ayushnagpure27@gmail.com"
+#                 sendEmail(to, content)
+#             except Exception as e:
+#                 print(e)
+#                 speak("sorry bro I am not able to send the email")
