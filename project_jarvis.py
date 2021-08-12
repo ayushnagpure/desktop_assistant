@@ -67,8 +67,8 @@ if __name__== "__main__":
         
         # Logic for executing tasks based on query
         if 'wikipedia' in query:
-            speak('searching wikipwdia...')
-            query = query.replace("wikipwdia", "")
+            speak('searching wikipedia...')
+            query = query.replace("wikipedia", "")
             result = wikipedia.summary(query, sentences=2)
             speak("According to wikipedia")
             print(result)
